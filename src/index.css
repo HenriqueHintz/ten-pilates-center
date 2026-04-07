@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-brand-orange: #C45A2D;
+  --color-brand-orange-dark: #A3461F;
+  --color-brand-navy: #1A1A2E;
+  --color-brand-navy-light: #2A2A3E;
+  --color-brand-sand: #FAF8F5;
+  --color-brand-stone: #EDE9E3;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    @apply font-sans text-gray-900 bg-brand-sand;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+    font-variant-ligatures: common-ligatures;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-brand-navy;
+  }
+  
+  /* Selection color */
+  ::selection {
+    background-color: #C45A2D;
+    color: white;
+  }
+}
+
+/* Smooth image rendering */
+img {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C45A2D;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A3461F;
+}
+
