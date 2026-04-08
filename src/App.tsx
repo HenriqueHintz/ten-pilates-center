@@ -9,8 +9,6 @@ import { Hero } from './sections/Hero';
 import { PremiumBenefitsSection } from './sections/PremiumBenefitsSection';
 import { About } from './sections/About';
 import { VideoSection } from './sections/VideoSection';
-import { InstagramSection } from './sections/InstagramSection';
-import { FAQ } from './sections/FAQ';
 import { Location } from './sections/Location';
 import { FinalCTA } from './sections/FinalCTA';
 import { Footer } from './sections/Footer';
@@ -25,8 +23,6 @@ export default function App() {
         <PremiumBenefitsSection />
         <About />
         <VideoSection />
-        <InstagramSection />
-        <FAQ />
         <Location />
         <FinalCTA />
       </main>

@@ -1,6 +1,8 @@
-import { motion } from 'motion/react';
+import React, { useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Section } from '../components/ui/Section';
 import { Container } from '../components/ui/Container';
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 // Custom Animated SVGs
 function IconSpine({ className }: { className?: string }) {
@@ -69,26 +71,44 @@ const benefits = [
   {
     icon: IconSpine,
     title: "Alívio de Dores",
-    description: "Fortaleça a musculatura profunda e elimine dores na coluna e articulações."
   },
   {
     icon: IconAlign,
     title: "Postura Correta",
-    description: "Ajuste seu corpo com consciência e movimentos precisos."
   },
   {
     icon: IconSpark,
     title: "Mais Energia",
-    description: "Ative seu corpo e aumente sua disposição no dia a dia."
   },
   {
     icon: IconLotus,
     title: "Bem-estar",
-    description: "Equilibre mente e corpo com leveza e controle."
   },
 ];
 
 export function PremiumBenefitsSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
+
   return (
     <Section id="beneficios" bg="white" className="py-24 md:py-32">
       <Container>
@@ -101,20 +121,26 @@ export function PremiumBenefitsSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-xl"
           >
-            <span className="inline-block text-brand-orange text-sm font-semibold tracking-widest uppercase mb-4">Benefícios</span>
+            <span className="inline-block text-brand-orange text-sm font-semibold tracking-widest uppercase mb-4">Sobre Nós</span>
             <h2 className="text-4xl lg:text-5xl font-bold text-brand-navy mb-6 tracking-tight leading-tight">
               Seu corpo alinhado, <br className="hidden sm:block" />
               <span className="text-brand-orange italic font-light underline decoration-brand-orange/30 underline-offset-8">sua rotina mais leve.</span>
             </h2>
 
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-semibold mb-1">
-              Pilates é reeducação do movimento.
+              Acreditamos que o movimento transforma.
             </p>
             <p className="text-base sm:text-lg text-gray-500 leading-relaxed font-light mb-10">
-              Com precisão e foco na biomecânica, você constrói uma base forte para um corpo equilibrado e sem dores.
+              Por isso, entregamos um atendimento humanizado, focado no que realmente importa: Sua Saúde.
             </p>
 
-            <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <p className="text-base sm:text-[17px] text-brand-navy font-medium italic border-l-2 border-brand-orange/50 pl-4 mb-10 py-1 bg-gradient-to-r from-brand-orange/5 to-transparent">
+              Ten Pilates Center, O seu novo <span className="underline decoration-brand-orange/50 underline-offset-4">espaço de bem-estar</span> no Santa Mônica, em Florianópolis.
+            </p>
+
+            <div className="mt-4">
+              <span className="inline-block text-brand-orange text-sm font-semibold tracking-widest uppercase mb-4">Benefícios</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={benefit.title}
@@ -122,7 +148,7 @@ export function PremiumBenefitsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.12 }}
-                  className="flex gap-4 items-start group cursor-default"
+                  className="flex gap-4 items-center group cursor-default"
                 >
                   <motion.div
                     className="w-11 h-11 rounded-xl bg-brand-orange/10 flex items-center justify-center flex-shrink-0"
@@ -146,10 +172,10 @@ export function PremiumBenefitsSection() {
                     >
                       {benefit.title}
                     </motion.h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">{benefit.description}</p>
                   </div>
                 </motion.div>
               ))}
+              </div>
             </div>
           </motion.div>
 
@@ -160,15 +186,59 @@ export function PremiumBenefitsSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: "easeOut" }}
             whileHover={{ scale: 1.02 }}
-            className="relative order-last lg:order-last w-full max-w-md mx-auto rounded-2xl overflow-hidden bg-brand-sand shadow-lg ring-1 ring-gray-200 hover:shadow-2xl transition-shadow duration-500 cursor-pointer mt-8 sm:mt-0"
+            className="relative order-last lg:order-last w-full max-w-[360px] mx-auto rounded-2xl overflow-hidden bg-brand-sand shadow-lg ring-1 ring-gray-200 hover:shadow-2xl transition-shadow duration-500 cursor-pointer mt-8 sm:mt-0"
           >
-            <div className="aspect-square">
-              <img 
-                src="/images/foto 03.png"
-                alt="Interior do Ten Pilates Center — recepção e ambiente premium" 
-                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
-                loading="lazy"
+            <div className="aspect-[4/5] lg:aspect-[3/4] relative group">
+              <video 
+                ref={videoRef}
+                src="/images/video sobre nos.mp4"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+                onClick={togglePlay}
               />
+
+              {/* Immersive Overlay for Intro Video */}
+              <div className="absolute inset-x-0 bottom-0 p-6 pt-16 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-start pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="flex flex-col translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-brand-orange font-bold mb-1 opacity-90">Nosso Estúdio</span>
+                  <h3 className="text-xl font-bold font-serif text-white leading-tight">A Experiência Ten</h3>
+                </div>
+              </div>
+              
+              <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button
+                  onClick={toggleMute}
+                  className="w-8 h-8 rounded-full bg-black/50 backdrop-blur flex items-center justify-center text-white hover:bg-brand-orange transition-colors"
+                  aria-label={isMuted ? "Ativar som" : "Silenciar"}
+                >
+                  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                </button>
+                <button
+                  onClick={togglePlay}
+                  className="w-8 h-8 rounded-full bg-black/50 backdrop-blur flex items-center justify-center text-white hover:bg-brand-orange transition-colors"
+                  aria-label={isPlaying ? "Pausar" : "Tocar"}
+                >
+                  {isPlaying ? <Pause className="w-4 h-4" fill="currentColor" /> : <Play className="w-4 h-4 ml-0.5" fill="currentColor" />}
+                </button>
+              </div>
+
+              <AnimatePresence>
+                {!isPlaying && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  >
+                    <div className="w-16 h-16 bg-brand-orange/90 rounded-full flex items-center justify-center text-white shadow-lg backdrop-blur-md">
+                      <Play className="w-8 h-8 ml-1" fill="currentColor" />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
         </div>

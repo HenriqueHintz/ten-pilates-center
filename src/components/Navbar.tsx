@@ -32,10 +32,9 @@ export function Navbar() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: 'O Método', href: '#beneficios' },
+    { name: 'Sobre Nós', href: '#beneficios' },
     { name: 'O Estúdio', href: '#sobre' },
     { name: 'Nosso Dia a Dia', href: '#instagram' },
-    { name: 'Dúvidas', href: '#faq' },
     { name: 'Como Chegar', href: '#localizacao' },
   ];
 

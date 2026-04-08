@@ -58,7 +58,7 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">Links Rápidos</h4>
             <ul className="space-y-2 md:space-y-3 text-sm md:text-base">
-              <li><a href="#beneficios" className="relative inline-block hover:text-brand-orange transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full">O Método</a></li>
+              <li><a href="#beneficios" className="relative inline-block hover:text-brand-orange transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full">Sobre Nós</a></li>
               <li><a href="#sobre" className="relative inline-block hover:text-brand-orange transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full">O Estúdio</a></li>
               <li><a href="#instagram" className="relative inline-block hover:text-brand-orange transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full">Nosso Dia a Dia</a></li>
               <li><a href="#localizacao" className="relative inline-block hover:text-brand-orange transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full">Como Chegar</a></li>
@@ -74,13 +74,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 md:pt-8 border-t border-white/10 text-center text-xs md:text-sm flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500">&copy; {new Date().getFullYear()} Ten Pilates Center. Todos os direitos reservados.</p>
+        <div className="pt-8 md:pt-10 border-t border-white/10 flex flex-col items-center justify-center text-center gap-6">
+          <p className="text-gray-500 text-xs md:text-sm">&copy; {new Date().getFullYear()} Ten Pilates Center. Todos os direitos reservados.</p>
           
-          <div className="flex flex-col md:items-end gap-1.5 opacity-80">
-            <p className="text-gray-500">Florianópolis - SC, Brasil</p>
-            <p className="flex items-center gap-2">
-              <span>Desenvolvedor | Created by</span>
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex items-center gap-3 text-xs md:text-sm flex-wrap justify-center">
+              <span className="text-gray-500">Desenvolvedor | Created by</span>
               <a 
                 href="https://www.instagram.com/henriquehtz/" 
                 target="_blank" 
@@ -92,13 +91,13 @@ export function Footer() {
                   alt="Henrique" 
                   className="w-6 h-6 rounded-full object-cover border border-brand-orange/50 group-hover:border-white transition-colors duration-300 bg-brand-navy-light flex-shrink-0"
                   onError={(e) => {
-                    // Fallback to stylized 'H' initial if local file 'henrique.png' is missing
                     e.currentTarget.src = "https://api.dicebear.com/7.x/initials/svg?seed=Henrique&backgroundColor=C45A2D&textColor=ffffff";
                   }}
                 />
                 @henriquehtz
               </a>
-            </p>
+            </div>
+            <p className="text-gray-500 text-[10px] uppercase tracking-widest opacity-60">Florianópolis - SC, Brasil</p>
           </div>
         </div>
       </Container>

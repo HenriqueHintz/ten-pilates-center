@@ -7,7 +7,7 @@ export function Hero() {
   const whatsappUrl = "https://api.whatsapp.com/send/?phone=5548991605318&text=Ol%C3%A1%21+Gostaria+de+agendar+uma+aula+experimental.&type=phone_number&app_absent=0";
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-brand-sand w-full">
+    <section className="relative min-h-[100dvh] flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden bg-brand-sand w-full">
       {/* Subtle decorative elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-orange/5 rounded-full -translate-y-1/2 translate-x-1/3"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-stone/50 rounded-full translate-y-1/2 -translate-x-1/3"></div>
@@ -26,10 +26,10 @@ export function Hero() {
               className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-brand-stone text-brand-navy text-xs sm:text-sm font-medium tracking-wide mb-6 border border-brand-stone"
             >
               <MapPin className="w-3.5 h-3.5 text-brand-orange" />
-              Florianópolis - SC · Trindade
+              Florianópolis - SC · Santa Mônica
             </motion.span>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold md:font-semibold lg:font-medium tracking-tight leading-[1.1] mb-6 text-brand-navy">
+            <h1 className="text-4xl sm:text-5xl md:text-[3.2rem] lg:text-7xl font-bold md:font-semibold lg:font-medium tracking-tight leading-[1.1] mb-4 md:mb-6 text-brand-navy">
               Transforme sua{' '}
               <span className="text-brand-orange italic underline decoration-brand-orange/30 underline-offset-8">
                 postura
@@ -38,10 +38,10 @@ export function Hero() {
               qualidade de vida.
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 md:mb-4 leading-relaxed max-w-xl">
               Descubra o poder do Pilates, reduza dores, ganhe flexibilidade e reconecte-se com seu corpo.
             </p>
-            <p className="text-base sm:text-lg md:text-xl mb-10 max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-10 max-w-xl">
               <span className="text-brand-orange italic underline decoration-brand-orange/30 underline-offset-8 font-semibold">Ten Pilates — seu corpo em sua melhor versão.</span>
             </p>
             

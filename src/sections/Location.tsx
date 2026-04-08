@@ -10,7 +10,7 @@ const contactItems = [
     content: (
       <p className="text-sm md:text-base text-gray-600 leading-relaxed">
         Av. Me. Benvenuta, 883<br />
-        Trindade, Florianópolis - SC<br />
+        Santa Mônica, Florianópolis - SC<br />
         88035-000
       </p>
     )
