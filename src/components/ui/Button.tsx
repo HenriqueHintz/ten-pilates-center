@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode, MouseEvent } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -6,6 +6,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   className?: string;
+  onClick?: (e: MouseEvent<any>) => void;
 }
 
 export function Button({ 
@@ -14,6 +15,7 @@ export function Button({
   size = 'md', 
   href,
   className = '',
+  onClick,
   ...props 
 }: ButtonProps) {
   const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2";
@@ -38,6 +40,7 @@ export function Button({
       <a 
         href={href} 
         className={classes} 
+        onClick={onClick}
         {...(!isInternal && { target: "_blank", rel: "noopener noreferrer" })}
       >
         {children}

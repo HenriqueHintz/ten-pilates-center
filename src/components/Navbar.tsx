@@ -90,26 +90,60 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 md:hidden h-[100dvh] overflow-y-auto"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: '100dvh' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-0 left-0 right-0 bg-white md:hidden overflow-hidden"
           >
-            <div className="flex flex-col p-6 gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-lg font-medium text-gray-800 py-2 border-b border-gray-50"
-                  onClick={() => setIsMobileMenuOpen(false)}
+            <div className="flex flex-col items-center justify-between h-full p-8 pt-24 pb-12">
+              <div className="flex-grow flex flex-col items-center justify-center gap-12 w-full">
+                <ul className="flex flex-col items-center gap-8">
+                  {navLinks.map((link, i) => (
+                    <motion.li 
+                      key={link.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.1 + 0.2 }}
+                    >
+                      <a
+                        href={link.href}
+                        className="text-3xl sm:text-4xl font-serif font-bold text-brand-navy hover:text-brand-orange transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="w-full flex justify-center"
                 >
-                  {link.name}
-                </a>
-              ))}
-              <Button href={whatsappUrl} className="mt-4 w-full justify-center">
-                Agendar Aula Experimental
-              </Button>
+                  <Button href={whatsappUrl} size="lg" className="w-full max-w-[320px] justify-center shadow-xl py-5 text-xl" onClick={() => setIsMobileMenuOpen(false)}>
+                    Agendar Aula
+                  </Button>
+                </motion.div>
+              </div>
+
+              {/* Mobile Menu Footer to fill the space */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="w-full flex flex-col items-center gap-6 border-t border-gray-100 pt-8"
+              >
+                <div className="flex gap-6 items-center">
+                  <a href="https://www.instagram.com/tenpilatescenter/" target="_blank" className="w-12 h-12 rounded-full bg-brand-sand flex items-center justify-center text-brand-navy hover:bg-brand-orange hover:text-white transition-all">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.5 21h9a4.5 4.5 0 004.5-4.5v-9A4.5 4.5 0 0016.5 3h-9A4.5 4.5 0 003 7.5v9A4.5 4.5 0 007.5 21z"></path></svg>
+                  </a>
+                  <div className="w-px h-6 bg-gray-200"></div>
+                  <span className="text-gray-500 text-sm font-medium tracking-wide">Santa Mônica, Florianópolis</span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         )}

@@ -208,7 +208,7 @@ export function PremiumBenefitsSection() {
                 </div>
               </div>
               
-              <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-3 right-3 md:top-4 md:right-4 flex flex-col gap-2 z-30 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
                 <button
                   onClick={toggleMute}
                   className="w-8 h-8 rounded-full bg-black/50 backdrop-blur flex items-center justify-center text-white hover:bg-brand-orange transition-colors"
