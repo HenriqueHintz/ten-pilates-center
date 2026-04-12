@@ -1,102 +1,98 @@
 <div align="center">
+  <img src="public/favicon.svg" alt="Ten Pilates Center Logo" width="80" />
 
-# 🧘 Ten Pilates Center
+  # Ten Pilates Center
+  **A Premium Pilates Studio Experience — Motion-Driven Landing Page**  
+  *Experiência Premium em Pilates — Landing Page Dinâmica e Conversiva*
 
-**Landing Page Premium — Noir Essence Design System**
-
-Uma landing page de alta conversão para o **Ten Pilates Center**, estúdio de Pilates localizado na Trindade, Florianópolis - SC. Projetada com foco em performance, estética premium e experiência mobile-first.
-
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+  [![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+  [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+  [![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue)](https://www.framer.com/motion/)
 
 </div>
 
+<br />
+
+## 🎯 About / Sobre
+
+**English:**  
+Ten Pilates Center is a professional, high-conversion landing page designed for a premium Pilates studio located in Florianópolis, SC. Built with real frontend modern technologies—React 19, Vite, Tailwind CSS v4, and Framer Motion—it features a highly immersive cinematic aesthetic. The layout leverages dynamic video backgrounds, micro-interactions, and a sophisticated color palette (Navy and Orange accents) to communicate elegance, wellness, and professionalism. The core value prop is simple: turn visitors into high-value studio leads.
+
+**Português:**  
+Ten Pilates Center é uma landing page focada em alta conversão e estética premium para um estúdio de Pilates localizado em Florianópolis, SC. Desenvolvida com a stack frontend mais moderna do mercado (React 19, Vite, Tailwind CSS v4 e Framer Motion), ela oferece uma experiência cinematográfica e imersiva. A interface utiliza vídeos dinâmicos, micro-interações fluidas e uma paleta de cores sofisticada (fundo Navy e detalhes em Laranja) para comunicar elegância, bem-estar e serviço de alto padrão. O principal objetivo de negócio é direto e claro: transformar visitantes da página em potenciais clientes (leads) qualificados para o estúdio.
+
 ---
 
-## ✨ Features
+## 🛠 Tech Stack & Architecture
 
-- **Design System Noir Essence** — Paleta sofisticada Navy (`#1A1A2E`), Orange (`#C45A2D`), Sand (`#FAF8F5`) e Stone (`#EDE9E3`)
-- **Animações Premium** — Micro-interações com Framer Motion, ícones SVG animados com física de mola
-- **Mobile-First** — Layout 100% responsivo, menu hambúrguer com scroll lock, carrossel touch-friendly
-- **SEO Otimizado** — Semântica HTML5, meta tags, heading hierarchy, performance otimizada
-- **Integração WhatsApp** — CTAs conectados diretamente ao WhatsApp do estúdio
-- **Tipografia Premium** — Google Fonts (Inter + Playfair Display) com renderização otimizada
+| Technology | Purpose |
+| :--- | :--- |
+| **Vite** | Blazing fast build tool and development server. |
+| **React 19** | Component-based UI library rendering the core frontend architecture. |
+| **TypeScript** | Strict static typing for resilient and robust code execution. |
+| **Tailwind CSS v4** | Utility-first CSS framework for rapid UI styling, avoiding CSS bloat. |
+| **Motion** | Fluid, physics-based viewport animations and scroll reveals. |
+| **Lucide React** | Clean, highly scalable SVG iconography set. |
 
-## 🏗️ Arquitetura
+---
 
-```
-src/
-├── components/
-│   ├── ui/              # Design System (Button, Container, Section)
-│   ├── Navbar.tsx        # Navegação responsiva com scroll detection
-│   └── FloatingWhatsApp.tsx  # Botões flutuantes (WhatsApp + Scroll-to-top)
-├── sections/
-│   ├── Hero.tsx          # Seção principal com CTAs
-│   ├── About.tsx         # Sobre o estúdio
-│   ├── PremiumBenefitsSection.tsx  # Benefícios com ícones animados
-│   ├── VideoSection.tsx  # VSL com formato TikTok (mobile)
-│   ├── InstagramSection.tsx  # Feed do Instagram com carrossel
-│   ├── FAQ.tsx           # Perguntas frequentes (accordion)
-│   ├── Location.tsx      # Mapa e localização
-│   ├── FinalCTA.tsx      # Call-to-action final
-│   └── Footer.tsx        # Rodapé com links e assinatura
-├── App.tsx               # Composição principal
-├── index.css             # Design tokens e variáveis globais
-└── main.tsx              # Entry point
-```
+## 🚀 Key Features / Principais Funcionalidades
 
-## 🚀 Como Rodar
+- **Cinematic Hero Video Integration:** Uses immersive video playback and typography to hook users instantly.
+- **Scroll-Aware Animations:** Sections progressively reveal based on viewport intersection via `motion/react` ensuring constant user engagement.
+- **Granular Media Control:** Custom video players within `ModalityCards` strictly handling mobile/desktop autoplay logic with initial frame presentation (`preload="auto"`).
+- **Fully Responsive Matrix:** Tailored CSS Grid and Flexbox layouts guaranteeing pixel-perfect views on Retina Desktops to dense mobile screens.
+- **Conversion-Optimized CTA:** Strategic WhatsApp direct routing mapping user flow straight into the sales funnel funnel.
 
-**Pré-requisitos:** [Node.js](https://nodejs.org/) (v18+)
+---
+
+## 💻 Running Locally / Rodando Localmente
+
+To run this project on your machine, clone the repository and execute the following:
 
 ```bash
-# 1. Clone o repositório
+# 1. Clone the repository
 git clone https://github.com/HenriqueHintz/ten-pilates-center.git
 
-# 2. Acesse a pasta
+# 2. Enter the directory
 cd ten-pilates-center
 
-# 3. Instale as dependências
+# 3. Install dependencies
 npm install
 
-# 4. Rode o servidor de desenvolvimento
+# 4. Start the frontend development server
 npm run dev
 ```
 
-O app estará disponível em `http://localhost:3000`
-
-## 🎨 Design System
-
-| Token | Cor | Uso |
-|-------|-----|-----|
-| `brand-navy` | `#1A1A2E` | Textos principais, fundos escuros |
-| `brand-orange` | `#C45A2D` | Destaques, CTAs, interações |
-| `brand-sand` | `#FAF8F5` | Background principal |
-| `brand-stone` | `#EDE9E3` | Seções alternadas |
-
-## 📱 Responsividade
-
-- **Mobile** (< 640px) — Layout vertical, carrossel com navegação touch, vídeo formato TikTok (3:4)
-- **Tablet** (640px - 1024px) — Layout adaptado com grids flexíveis
-- **Desktop** (> 1024px) — Layout completo com hover effects e animações expandidas
-
-## 🛠️ Tech Stack
-
-| Tecnologia | Versão | Função |
-|-----------|--------|--------|
-| React | 19 | UI Library |
-| Vite | 6 | Build Tool |
-| TailwindCSS | 4 | Styling |
-| Framer Motion | 11 | Animações |
-| Lucide React | — | Ícones |
-| TypeScript | 5 | Type Safety |
+> **Note:** The server will by default run on `http://localhost:3000`.
 
 ---
 
-<div align="center">
+## 📁 System Architecture / Estrutura do Sistema
 
-**Desenvolvido por [@henriquehtz](https://www.instagram.com/henriquehtz/)**
+```text
+├── src/
+│   ├── components/
+│   │   └── ui/           # Headless & Reusable Core UI Components (Buttons, Containers)
+│   ├── sections/         # Big Page Blocks (Hero, About, PremiumBenefitsSection)
+│   ├── App.tsx           # Main Application Container & Route Handling
+│   └── index.css         # Global Styles & Tailwind Configuration Imports
+├── public/               # Static assets & images
+├── package.json          # Dependency Manifest
+└── vite.config.ts        # Vite Bundler Settings
+```
 
-</div>
+---
+
+## 📈 Status
+
+**Production-Ready:** This repository serves as the stable, production-ready frontend client for the Ten Pilates business ecosystem.
+
+---
+
+## 👨‍💻 Author
+
+**Henrique Hintz**
+- GitHub: [@HenriqueHintz](https://github.com/HenriqueHintz)

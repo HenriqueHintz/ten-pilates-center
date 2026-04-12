@@ -22,7 +22,7 @@ const modalidades = [
 function ModalityCard({ mod, index }: { mod: any, index: number, key?: React.Key }) {
   const isVideo = mod.imageFilename.endsWith('.mp4');
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = (e: React.MouseEvent) => {
@@ -59,9 +59,9 @@ function ModalityCard({ mod, index }: { mod: any, index: number, key?: React.Key
           <>
             <video 
               ref={videoRef}
-              src={`/images/${mod.imageFilename}`}
+              src={`/images/${mod.imageFilename}#t=0.1`}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              autoPlay
+              preload="auto"
               loop
               muted={isMuted}
               playsInline

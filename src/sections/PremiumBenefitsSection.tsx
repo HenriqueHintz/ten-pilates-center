@@ -88,7 +88,7 @@ const benefits = [
 
 export function PremiumBenefitsSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = (e: React.MouseEvent) => {
@@ -191,9 +191,9 @@ export function PremiumBenefitsSection() {
             <div className="aspect-[4/5] lg:aspect-[3/4] relative group">
               <video 
                 ref={videoRef}
-                src="/images/video sobre nos.mp4"
+                src="/images/video sobre nos.mp4#t=0.1"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                autoPlay
+                preload="auto"
                 loop
                 muted={isMuted}
                 playsInline

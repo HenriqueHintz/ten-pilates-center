@@ -39,9 +39,7 @@ export function Hero() {
               qualidade de vida.
             </h1>
             
-            <p className="text-lg sm:text-lg md:text-xl text-gray-600 mb-6 md:mb-6 leading-relaxed max-w-xl">
-              Descubra o poder do Pilates, reduza dores, ganhe flexibilidade e reconecte-se com seu corpo.
-            </p>
+
             <p className="text-lg sm:text-lg md:text-xl mb-10 md:mb-14 max-w-xl">
               <span className="text-brand-orange italic underline decoration-brand-orange/30 underline-offset-8 font-semibold">Ten Pilates — seu corpo em sua melhor versão.</span>
             </p>
